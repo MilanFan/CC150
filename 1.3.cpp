@@ -3,7 +3,7 @@
  *
  * Given two strings, write a method to decide if one is a permutation of the other
  *
- * NULL string
+ * Attention: NULL string
  *
  *  Created on: Oct 6, 2014
  *      Author: Milan Fan
@@ -17,7 +17,7 @@ using namespace std;
 
 bool isPermutation(string &s1, string &s2)
 {
-	if (s1.empty() )
+	if (s1.empty() || s2.empty()) return false;
 	if (s1.length() != s2.length()) return false;
 	int count[MAX_CHAR] = {0};
 
@@ -38,10 +38,13 @@ int main()
 	string s2 = "ababab";
 	string s3 = "aabbaa";
 	string s4 = "ab";
+	string s5 = "";
+	string s6 = "";
 
 	cout << isPermutation(s1, s2) << endl;
 	cout << isPermutation(s1, s3) << endl;
 	cout << isPermutation(s1, s4) << endl;
+	cout << isPermutation(s5, s6) << endl;
 
 	return 0;
 }
